@@ -2,8 +2,8 @@ pipeline {
     agent none
 
     environment {
-        DOCKER_HUB_USERNAME = "root"
-        DOCKER_HUB_PASSWORD = "root"
+        DOCKER_HUB_USERNAME = credentials('DOCKER_HUB_USERNAME')
+        DOCKER_HUB_PASSWORD = credentials('DOCKER_HUB_TOKEN')
         CURRENT_COMMIT = getCommitHash()
     }
 
